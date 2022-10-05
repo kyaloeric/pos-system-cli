@@ -9,24 +9,10 @@ def search_products():
 
     for line, row in enumerate(file_contents):
         if product_name in row:
-            print('Name "{0}" found in line {1}'.format(product_name, line))
+            print('Name "{0}" found in line {0}'.format(product_name, line))
 
 
 # another approach
-line = 0
 
-names = open("customers.txt", "r")
-name1 = names.readlines()
 
-customer_name = input("Please enter the name you want to find: ")
-for name in name1:
-    # noinspection PyBroadException
-    try:
-        print(name)
-        print(line)
-        if name == customer_name:
-            print(f"Found name: {name} \nLine No. {line + 1}")
-        else:
-            line = line + 1
-    except:
-        print("Unable to process")
+

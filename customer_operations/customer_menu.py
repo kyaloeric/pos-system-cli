@@ -17,6 +17,8 @@ def customerMenu():
 
 
 def customer_main():
+    from mainmenu.mainMenu import main_menu
+    from customer_operations.customerQueries import customer_queries
     customerMenu()
     choice = int(input("Enter your choice: "))
 
@@ -32,10 +34,11 @@ def customer_main():
             delete_customer()
         elif choice == 4:
             print(" customer queries")
-            # customer_queries()
+            customer_queries()
 
         elif choice == 0:
             print("Exiting")
+            main_menu()
         else:
             print(" Oops!! Wrong choice!!")
 
