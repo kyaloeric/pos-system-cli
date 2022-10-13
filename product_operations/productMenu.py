@@ -1,11 +1,7 @@
 # product menu options
-from product_operations.addproduct import add_product
-from product_operations.deleteproduct import delete_product
-from product_operations.update_product import update_product
-
 
 def productMenu():
-    print(" KINDLY MAKE A CHOICE TO CONTINUE")
+    print("--Make a choice to continue--")
     print("[1] Add product.")
     print("[2] Update product.")
     print("[3] Delete product.")
@@ -15,7 +11,9 @@ def productMenu():
 
 def product_main():
     from mainmenu.mainMenu import main_menu
+    from product_operations.products import add_product, delete_product, update_product
     from product_operations.productQueries import product_queries
+
     productMenu()
     choice = int(input("Enter your choice: "))
 
@@ -36,7 +34,6 @@ def product_main():
         elif choice == 0:
             print("Exiting")
             main_menu()
-
         else:
             print(" Oops!! Wrong choice!!")
 

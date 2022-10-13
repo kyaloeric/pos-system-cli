@@ -1,5 +1,6 @@
-from customer_operations.customer_menu import customer_main
-from product_operations.productMenu import product_main
+from customer_operations.customer_menu import *
+from product_operations.productMenu import *
+from purchases import *
 
 
 def main_menu_operations():
@@ -22,7 +23,7 @@ def main_menu():
             product_main()
         elif choice == 3:
             print("You are dealing with purchase operations")
-            product_main()
+            purchases_menu()
         elif choice == 0:
             print("Exited successfully")
             quit()

@@ -1,50 +1,101 @@
+import random
+
+
 class CustomerOperations:
-    def __init__(self, phone_number, first_name, last_name):
+    def __init__(self, customer_id, phone_number, first_name, last_name):
+        self.customer_id = customer_id
         self.first_name = first_name
         self.last_name = last_name
         self.phone_number = phone_number
 
     # add a new customer
-    @classmethod
-    def add_customer(cls):
-        foo = open("customers.txt", "a+")
-        name = input("Enter name: ")
-        age = input("Enter customer age: ")
-        phone_number = int(input("enter the number: "))
-        foo.write(str(age) + "\n " + name + " \n" + str(phone_number) + "\n")  # new line
-        print('Customer added successfully.')
-        foo.close()
-
-    # delete customer by name
-    @classmethod
-    def delete_customer(cls, name):
-        with open("customers.txt", "r") as f:
-            # read data line by line
-            data = f.readlines()
-
-        # open file in write mode
-        with open("customers.txt", "w") as f:
-            for line in data:
-
-                # condition for data to be deleted by name
-                name = str(input("Enter the customers Name:  "))
-                if line.strip("\n") != name:
-                    f.write(line)
-                    print('The customer name"{0}" has been deleted'.format(name, line))
-
-    # update customer by name
-    @classmethod
-    def update_customer(cls):
-        import sys
-        import fileinput
-
-        a = input("Enter customer name to be replaced:")
-        b = input("Enter the new customer name")
-
-        for n in fileinput.input(files="customers.txt"):
-            n = n.replace(a, b)
-            sys.stdout.write(n)
 
 
-def read():
-    return None
+def add_customer():
+    customer_id = random.randint(10000, 100000)
+    customer_name = input("Enter the name of the customer: ")
+    customer_phone = input("Enter the phone number of the customer: ")
+
+    z = f'{customer_id},{customer_name},{customer_phone}\n'
+
+    with open('customers.txt', 'a') as outfile:
+        print("A new Customer has been Added successfully.")
+        outfile.write(z)
+
+
+# delete customer by ID
+def delete_customer():
+    with open("customers.txt", "r") as f:
+        f_list = f.readlines()
+        customer_id = input("Enter the customer's ID: ")
+        for Line in f_list:
+            if customer_id in Line:
+                line_index = f_list.index(Line)
+
+                f_list.pop(line_index)
+
+        with open('customers.txt', 'w') as outfile:
+            print("The Customer has been  Deleted successfully.")
+            for Line in f_list:
+                outfile.write(Line)
+
+
+# update customer by name
+def update_customer():
+    with open("customers.txt", "r") as f:
+        f_list = f.readlines()
+        customer_id = input("Enter the customer ID: ")
+        for Line in f_list:
+            if customer_id in Line:
+                line_index = f_list.index(Line)
+
+                new_number = input("Enter the new phone number : ")
+                new_name = input(" Enter the new name: ")
+                k = Line.split(',')
+                k[1] = new_name
+                x = Line.split(',')
+                x[2] = new_number
+        f = ','
+        f_list[line_index] = f.join(x)
+
+        with open('customers.txt', 'w') as outfile:
+            print("Customer Updated successfully.")
+            for Line in f_list:
+                outfile.write(Line)
+
+
+# search customer by ID
+def SearchCustomer():
+    found_cust = []
+    with open("customers.txt", "r") as f:
+        customer_id = int(input("Please enter Customer's ID: "))
+        for Line in f:
+            if str(customer_id) in Line:
+                found_cust.append(Line)
+                print(found_cust)
+            else:
+                print("The customer with this ID does not exist")
+
+
+# search customer by name
+
+def SearchCustomerByName():
+    found_cust = []
+    with open("customers.txt", "r") as f:
+        customer_name = int(input("Please enter Customer's Name: "))
+        for Line in f:
+            if str(customer_name) in Line:
+                found_cust.append(Line)
+                print(found_cust)
+            else:
+                print("The customer with this name does not exist")
+
+
+# fetch all the customers by displaying their details
+def DisplayAllCustomers():
+    all_customers = []
+    with open("customers.txt", "r") as f:
+        all_cust = f.readlines()
+        for Lines in all_cust:
+            all_customers.append(Lines)
+        print(all_customers)

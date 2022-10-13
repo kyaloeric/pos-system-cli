@@ -1,10 +1,5 @@
 # customer menu options
-from customer_operations.add_customer import add_customer
-from customer_operations.update_customer import update_customer
-from customer_operations.deletecustomer import delete_customer
-
-
-# from customer_operations.customerQueries import customer_queries
+from customer_operations.customers import add_customer, update_customer, delete_customer
 
 
 def customerMenu():
