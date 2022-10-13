@@ -3,7 +3,7 @@
 ### Introduction.
 
 PO-CLI is a point of sale system that entirely works on the commandline whereby the user is prompted to make choices stepwise based on certain specific actions that leads towards the solution of what he intends to do. This has been achieved through the implementation of a python program that presents the user with a menu on where he picks the choices from, and they are processed.
-Prerequisite.
+#### Prerequisite.
 
   * python 3
 
