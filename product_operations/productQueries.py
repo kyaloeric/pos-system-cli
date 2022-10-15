@@ -15,6 +15,7 @@ def product_queries():
     queries_options()
     from product_operations.products import SearchProduct
     from product_operations.products import DisplayAllProducts
+    from mainmenu.mainMenu import main_menu
     choice = int(input("Enter your choice: "))
 
     while True:
@@ -26,6 +27,7 @@ def product_queries():
             pass
 
         elif choice == 0:
+            main_menu()
             print("Exiting")
         else:
             print(" Oops!! Wrong choice!!")

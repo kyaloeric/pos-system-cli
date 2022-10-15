@@ -17,7 +17,7 @@ def make_purchase():
     shopping_cart = []
     list_quantity = []
     list_price = []
-    prod = []
+    product = []
     customer_id = input("Enter the Customer's Id: ")
 
     loop1 = 1
@@ -54,9 +54,9 @@ def make_purchase():
 
             # adding the total price of product times quantity to the declared empty list
             list_price.append(total_price)
-            prod[3] = str(new_quantity)
+            product[3] = str(new_quantity)
             s = ','
-            fprodlist[line_index] = s.join(prod)
+            fprodlist[line_index] = s.join(product)
 
             total = 0
             for i in range(0, len(list_price)):
