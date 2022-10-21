@@ -1,4 +1,5 @@
 import random
+from mainmenu.main_menu import main_menu
 
 
 class ProductOperations:
@@ -83,7 +84,8 @@ def SearchCustomerByName():
                 found_cust.append(Line)
                 print(found_cust)
             else:
-                print("The product with this name does not exist")
+                # print("The product with this name does not exist")
+                main_menu()
 
 
 # display all the products
