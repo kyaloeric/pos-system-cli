@@ -1,0 +1,4 @@
+1701,Tomatoes,Vegetable,29,20
+607,Omo,Washing powder,186,50
+3049,pilipili,Vegetable,450,30
+2658,Cabbage,Vegetable,500,30

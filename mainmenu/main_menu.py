@@ -1,10 +1,10 @@
-from customer_operations.customer_menu import *
-from product_operations.productMenu import *
-from purchases import *
+from customeroperations.customer_menu import *
+from productoperations.product_menu import *
+from purchaseoperations.purchases import *
 
 
 def main_menu_operations():
-    print("***WELCOME TO ROCKS POS** ")
+    print("===WELCOME TO ROCKS STORE POS===")
     print("[1] Handle customers")
     print("[2] Handle products")
     print("[3] purchase operations")
@@ -13,6 +13,7 @@ def main_menu_operations():
 
 def main_menu():
     main_menu_operations()
+    print()
     choice = int(input("Enter your option: "))
     while choice != 0:
         if choice == 1:

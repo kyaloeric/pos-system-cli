@@ -61,12 +61,12 @@ def make_purchase():
             total = 0
             for i in range(0, len(list_price)):
                 total = total + list_price[i]
-            purchase_dictionary['Purchase ID'] = purchase_id
-            purchase_dictionary['Customer Name'] = customer_name
-            purchase_dictionary['Products Name'] = shopping_cart
-            purchase_dictionary['Products Quantity'] = list_quantity
-            purchase_dictionary['Cumulative Product Prices'] = list_price
-            purchase_dictionary['Total'] = total
+            purchase_dictionary['1.Purchase ID: '] = purchase_id
+            purchase_dictionary['2.Customer Name: '] = customer_name
+            purchase_dictionary['3.Products Name: '] = shopping_cart
+            purchase_dictionary['4.Products Quantity: '] = list_quantity
+            purchase_dictionary['5.Cumulative Product Prices: '] = list_price
+            purchase_dictionary['Total: '] = total
             transaction_list.append(purchase_dictionary)
             with open('products.txt', 'w') as outfile:
                 for Line in fprodlist:
@@ -76,6 +76,10 @@ def make_purchase():
                 outfile1.write('\n')
                 outfile1.write(str(transaction_list))
             print("The Purchase is Successful!...")
+            print("--------------------")
+            print("    --RECEIPT-- ")
+            print("---------------------")
+
             for key, value in purchase_dictionary.items():
                 print(key, value)
             purchases_menu()
@@ -94,10 +98,11 @@ def purchases_menu():
         elif choice == 2:
             make_purchase()
         elif choice == 3:
-            from mainmenu.mainMenu import main_menu
+            from mainmenu.main_menu import main_menu
             main_menu()
         elif choice == 0:
             print()
             print('The System  is Exiting! Goodbye...')
         else:
             print("Oops, Wrong Choice!")
+

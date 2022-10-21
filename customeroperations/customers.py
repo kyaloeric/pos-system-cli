@@ -15,8 +15,9 @@ def add_customer():
     customer_id = random.randint(10000, 100000)
     customer_name = input("Enter the name of the customer: ")
     customer_phone = input("Enter the phone number of the customer: ")
+    customer_email = input(" Enter the email address")
 
-    z = f'{customer_id},{customer_name},{customer_phone}\n'
+    z = f'{customer_id},{customer_name},{customer_phone},{customer_email}\n'
 
     with open('customers.txt', 'a') as outfile:
         print("A new Customer has been Added successfully.")
@@ -65,7 +66,7 @@ def update_customer():
 
 
 # search customer by ID
-def SearchCustomer():
+def search_customer():
     found_cust = []
     with open("customers.txt", "r") as f:
         customer_id = int(input("Please enter Customer's ID: "))
@@ -79,10 +80,10 @@ def SearchCustomer():
 
 # search customer by name
 
-def SearchCustomerByName():
+def search_customer_by_name():
     found_cust = []
     with open("customers.txt", "r") as f:
-        customer_name = int(input("Please enter Customer's Name: "))
+        customer_name = input("Please enter Customer's Name: ")
         for Line in f:
             if str(customer_name) in Line:
                 found_cust.append(Line)
@@ -92,10 +93,24 @@ def SearchCustomerByName():
 
 
 # fetch all the customers by displaying their details
-def DisplayAllCustomers():
+def display_all_customers():
     all_customers = []
     with open("customers.txt", "r") as f:
         all_cust = f.readlines()
         for Lines in all_cust:
             all_customers.append(Lines)
         print(all_customers)
+
+
+# search customer and display their purchase history
+def display_customers_purchase_history():
+    purchase_history = []
+    with open("purchases.txt", "r") as f:
+        customer_name = input(" Enter the customers ID: ")
+        for line in f:
+            if str(customer_name) in line:
+                purchase_history.append(line)
+                print(purchase_history)
+
+            else:
+                print("Purchase history for that customer is empty")

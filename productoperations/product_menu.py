@@ -1,6 +1,7 @@
 # product menu options
 
-def productMenu():
+def product_menu():
+    print(" PRODUCTS MENU")
     print("--Make a choice to continue--")
     print("[1] Add product.")
     print("[2] Update product.")
@@ -10,11 +11,12 @@ def productMenu():
 
 
 def product_main():
-    from mainmenu.mainMenu import main_menu
-    from product_operations.products import add_product, delete_product, update_product
-    from product_operations.productQueries import product_queries
+    from mainmenu.main_menu import main_menu
+    from productoperations.products import add_product, delete_product, update_product
+    from productoperations.product_queries import product_queries
 
-    productMenu()
+    product_menu()
+    print()
     choice = int(input("Enter your choice: "))
 
     while True:

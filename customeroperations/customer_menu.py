@@ -1,9 +1,12 @@
 # customer menu options
-from customer_operations.customers import add_customer, update_customer, delete_customer
+from customeroperations.customers import add_customer, update_customer, delete_customer
 
 
 def customerMenu():
-    print(" KINDLY MAKE A CHOICE TO CONTINUE")
+    print()
+    print("   CUSTOMER MENU ")
+    print(" --- Make a choice to continue---")
+    print()
     print("[1] Add customer.")
     print("[2] Update customer.")
     print("[3] Delete customer.")
@@ -12,9 +15,10 @@ def customerMenu():
 
 
 def customer_main():
-    from mainmenu.mainMenu import main_menu
-    from customer_operations.customerQueries import customer_queries
+    from mainmenu.main_menu import main_menu
+    from customeroperations.customer_queries import customer_queries
     customerMenu()
+    print()
     choice = int(input("Enter your choice: "))
 
     while True:

@@ -1,6 +1,6 @@
 import os
 
-from mainmenu.mainMenu import main_menu
+from mainmenu.main_menu import main_menu
 
 
 def queries_options():
@@ -15,18 +15,19 @@ def queries_options():
 
 def customer_queries():
     queries_options()
-
-    from customer_operations.customers import SearchCustomer
-    from customer_operations.customers import DisplayAllCustomers
+    print()
+    from customeroperations.customers import search_customer
+    from customeroperations.customers import display_all_customers
+    from customeroperations.customers import display_customers_purchase_history
     choice = int(input("Enter your choice: "))
 
     while True:
         if choice == 1:
-            SearchCustomer()
+            search_customer()
         elif choice == 2:
-            DisplayAllCustomers()
+            display_all_customers()
         elif choice == 3:
-            pass
+            display_customers_purchase_history()
         elif choice == 0:
             main_menu()
             print("Exiting")

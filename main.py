@@ -1,4 +1,4 @@
-from mainmenu.mainMenu import main_menu
+from mainmenu.main_menu import main_menu
 
 
 # this main function calls the main menu function

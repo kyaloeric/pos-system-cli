@@ -13,9 +13,10 @@ def queries_options():
 
 def product_queries():
     queries_options()
-    from product_operations.products import SearchProduct
-    from product_operations.products import DisplayAllProducts
-    from mainmenu.mainMenu import main_menu
+    print()
+    from productoperations.products import SearchProduct
+    from productoperations.products import DisplayAllProducts
+    from mainmenu.main_menu import main_menu
     choice = int(input("Enter your choice: "))
 
     while True:
